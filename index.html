@@ -83,21 +83,15 @@
         </div>
     </section>
 
-    <!-- 音频播放器 -->
-    <button onclick="toggleMusic()">播放/暂停</button>
+   <!-- 音频播放器容器 -->
+   <div id="audio-player-container">
+    <button id="toggle-music-btn" onclick="toggleMusic()">播放/暂停</button>
     <audio id="background-music" loop>
         <source src="song.mp3" type="audio/mpeg">
         您的浏览器不支持音频标签。
     </audio>
-    <script>
-        function toggleMusic() {
-            var music = document.getElementById('background-music');
-            if (music.paused) {
-                music.play();
-            } else {
-                music.pause();
-            }
-        }
+</div>
+
     </script>
 </main>
 
