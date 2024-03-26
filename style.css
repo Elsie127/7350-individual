@@ -1,105 +1,199 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人网站</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<header>
-    <h1>我的个人网站</h1>
-    <nav>
-        <ul>
-            <li><a href=" ">关于我</a ></li>
-            <li><a href="#education">校园经历</a ></li>
-            <li><a href="#experience">实习经历</a ></li>
-        </ul>
-    </nav>
-</header>
-<main>
-    <section id="about">
-        <div class="container">
-            <h2 class="section-title">关于我</h2>
-            <div class="about-content">
-                < img src="taylor.jpg" alt="王一童" class="profile-picture">
-                <div class="profile-text">
-                    <p>我是王一童，2001年12月27日出生，现就读于香港浸会大学。</p >
-                    <p>我专注于计算机科学和传媒领域，对人工智能、数据科学充满热情。</p >
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="education" class="content-section">
-        <div class="container">
-            <h2 class="section-title">校园经历</h2>
-            <div class="me">
-                <ul class="timeline">
-                    <li>
-                        <h3>学生会｜宣传部部长</h3>
-                        <p>2020.3 - 2021.12</p >
-                        <p>1. 负责学院公众号运营，在职期间带领部门成员完成推文50+篇，最高浏览量达3w+，累计涨粉1000+</p >
-                        <p>2. 负责学院各类活动的宣传策划及组织实施，在职期间举报活动20+场</p >
-                        <p>3. 负责海报、体魄的设计及视频剪辑工作，输出30+公众号封面，20+精美PPT</p >
-                        <h3>校ERP 沙盘协会｜宣传部部长</h3>
-                        <p>2019.4 - 2021.12</p >
-                        <p>1. 负责运营公众号，每周推送ERP知识培训，发布竞赛信息</p >
-                        <p>2. 培训部员及新人，带领团队参加第七届全国大学生工程训练综合能力竞赛并获得省一等奖</p >
-                    </li>
-                    <!-- 添加更多经历 -->
-                </ul>
-                < img class="me_img" src="cc.png" alt="">
-            </div>
-            <div class="me">
-                <ul class="timeline">
-                    <li>
-                        <h3>人工智能与数字传媒专业</h3>
-                        <p>2023.8 - 至今</p >
-                        <p>主修课程:大数据管理与分析、数字媒体人工只能、数据挖掘、大数据和社交媒体营销</p >
-                        <p>技能:Python、Sql、Tableau</p >
-                    </li>
-                    <!-- 添加更多经历 -->
-                </ul>
-                < img class="me_img" src="hkbu.png" alt="">
-            </div>
-        </div>
-    </section>
-    <section id="experience" class="content-section">
-        <div class="container">
-            <h2 class="section-title">实习经历</h2>
-            <div class="me">
-                <ul class="timeline">
-                    <li>
-                        <h3>TikTok-国际化商业产品运营实习生</h3>
-                        <p>2023.4 - 2023.8</p >
-                        <p>1. 在全英文环境下，独立负责TikTok3款头部广告产品，从0到1参与产品运营全流程工作；实习期间，帮助300+品牌特效广告成功上线，
-                            发现50+问题并及时记录上报，产品总渗透率提升近15%，BiM收入提升10%。</p >
-                    </li>
+/* 全局样式 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
-                    <!-- 添加更多经历 -->
-                </ul>
-                < img class="me_img" src="tt.png" alt="">
-            </div>
-        </div>
-    </section>
+header, nav, main, aside, footer {
+    margin: 20px;
+    padding: 10px;
+}
 
-    <!-- 音频播放器 -->
-    <button onclick="toggleMusic()">播放/暂停</button>
-    <audio id="background-music" loop>
-        <source src="song.mp3" type="audio/mpeg">
-        您的浏览器不支持音频标签。
-    </audio>
-    <script>
-        function toggleMusic() {
-            var music = document.getElementById('background-music');
-            if (music.paused) {
-                music.play();
-            } else {
-                music.pause();
-            }
-        }
-    </script>
-</main>
+/* 标题样式 */
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
 
-</body>
-</html>
+/* 导航菜单样式 */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* 主要内容区样式 */
+main {
+    background-color: #f4f4f4;
+}
+
+/* 侧边栏样式 */
+aside {
+    background-color: #e4e4e4;
+    float: right;
+    width: 200px;
+}
+
+/* 页脚样式 */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.section-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    margin-bottom: 50px;
+}
+
+.profile-picture {
+    border-radius: 50%; /* 使图片为圆形 */
+    margin-right: 40px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover; /* 保持图片的比例 */
+}
+
+.profile-text p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .profile-picture {
+        margin-bottom: 20px;
+        margin-right: 0;
+    }
+}
+/* 时间线样式，用于教育和经验部分 */
+.timeline {
+    list-style-type: none;
+    padding: 0;
+}
+.timeline li {
+    border-left: 2px solid #333;
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+    position: relative;
+}
+.timeline li h3 {
+    margin-top: 0;
+}
+.timeline li::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #333;
+    position: absolute;
+    left: -6px;
+    top: 0;
+}
+.me {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* 在项目之间创建空间 */
+    margin-bottom: 50px;
+}
+
+.me_tit {
+    width: 300px;
+    line-height: 36px;
+    font-size: 18px;
+    margin-left: 5px;
+    margin-top: 20px;
+}
+
+.me_img {
+    width: 300px; /* 设置图片宽度 */
+    height: auto; /* 保持图片的原始高宽比 */
+    margin-left: 20px; /* 在图片和文本之间添加左侧外边距 */
+}
+
+
+.animate {
+    padding-left: 10px;
+    width: 300px;
+    font-size: 16px;
+    color: #000;
+    animation: 10s wordsLoop linear infinite normal;
+}
+/* 响应式设计，适应小屏幕设备 */
+@media (max-width: 768px) {
+    .me {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .timeline {
+        width: 100%; /* 让时间线宽度适应小屏幕 */
+        padding-right: 0; /* 移除右侧内边距 */
+    }
+    .me_img {
+        width: 100%; /* 图片在小屏幕上占满容器宽 */
+        margin-left: 0; /* 移除图片的左侧外边距 */
+        margin-top: 20px; /* 在文本和图片之间添加上侧外边距 */
+    }
+    /* 音频播放器的样式 */
+#audio-player-container {
+    position: fixed; /* 固定在顶部 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f8f9fa; /* 背景颜色 */
+    z-index: 1000; /* 确保播放器位于其他内容之上 */
+    text-align: center; /* 按钮居中 */
+    padding: 10px 0; /* 添加一些填充 */
+}
+
+/* 播放/暂停按钮的样式 */
+#toggle-music-btn {
+    font-size: 1.5em; /* 增大字体大小 */
+    padding: 10px 20px; /* 增大按钮填充 */
+    cursor: pointer; /* 鼠标悬停时显示指针 */
+    border: none; /* 移除边框 */
+    background-color: #007bff; /* 按钮背景颜色 */
+    color: white; /* 按钮文字颜色 */
+    border-radius: 5px; /* 圆角边框 */
+    margin: 10px; /* 外边距 */
+    transition: background-color 0.3s; /* 背景颜色过渡效果 */
+}
+
+/* 按钮悬停效果 */
+#toggle-music-btn:hover {
+    background-color: #0056b3; /* 按钮悬停时的背景颜色 */
+}
+
+}
